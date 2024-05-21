@@ -1,0 +1,21 @@
+// write your code here
+var image1 = new SimpleImage('drewRobert.png')
+var image2 = new SimpleImage('dinos.png')
+var imageRes = new SimpleImage(image1.getWidth(),image2.getHeight())
+
+for (let pixel of image1.values())
+{
+    var x = pixel.getX()
+    var y = pixel.getY()
+    if (pixel.getGreen() == 255 && pixel.getRed() == 0 && pixel.getBlue() == 0)
+    {
+        imageRes.setPixel(x,y, image2.getPixel(x,y))
+    }
+    else 
+    {
+        imageRes.setPixel(x,y,pixel)
+
+    }
+}
+
+print(imageRes)
