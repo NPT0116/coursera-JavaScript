@@ -1,0 +1,22 @@
+// write your code here
+var image = new SimpleImage ('chapel.png');
+var width = image.getWidth();
+var height = image.getHeight();
+
+for (let pixel of image.values())
+{
+    if (pixel.getX() <= width/3)
+    {
+        pixel.setRed(255);
+    }
+    if (pixel.getX() > width /3 && pixel.getX() <= width *2 / 3)
+    {
+        pixel.setGreen(255);
+    }
+    if (pixel.getX() > width*2 / 3)
+    {
+        pixel.setBlue(255);
+    }
+    
+}
+print (image)
